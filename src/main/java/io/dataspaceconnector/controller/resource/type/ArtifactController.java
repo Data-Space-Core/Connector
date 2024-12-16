@@ -212,7 +212,8 @@ public class ArtifactController extends BaseResourceNotificationController<Artif
         };
 
         final var outputHeader = new HttpHeaders();
-        outputHeader.set("Content-Disposition", "attachment;filename=" + artifactId.toString());
+        //outputHeader.set("Content-Disposition", "attachment;filename=" + artifactId.toString());
+        outputHeader.set("Content-Disposition", "inline; filename=" + artifactId.toString());
 
         final var type = getMediaTypeOfArtifact(artifactId);
         return ResponseEntity.ok()
